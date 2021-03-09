@@ -9,3 +9,19 @@ proxy(proxyPort)
   // console.log(server);
   // server.stop() 
 })
+
+var appRoot = require("app-root-path");
+var PATH_TO_KEY = appRoot.path + '/conf/28459803_srv5119-206152.vps.etecsa.cu.key';
+ var PATH_TO_CERT = appRoot.path + '/conf/28459803_srv5119-206152.vps.etecsa.cu.cert';
+ var httpProxy = require('http-proxy');
+var options = {
+ ssl: {
+ key: fs.readFileSync(PATH_TO_KEY, 'utf8'),
+ cert: fs.readFileSync(PATH_TO_CERT, 'utf8')
+ },
+ target : 'https://localhost:5000',
+ ws: true,
+ xfwd: true,
+};
+var server = httpProxy.createProxyServer(options).listen(443);
+console.log('httpProxy running with target at ' + options.target);
