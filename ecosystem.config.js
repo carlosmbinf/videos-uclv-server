@@ -1,14 +1,22 @@
 module.exports = {
   apps : [{
-    name: "app",
-    script: "node app",
-    env: {
-      NODE_ENV: "development",
-      "ROOT_URL": "https://srv5119-206152.vps.etecsa.cu:5000/",
-      "PORT": 80,
-    },
-    env_production: {
-      NODE_ENV: "production",
+    script: 'ap.js',
+    watch: '.'
+  }, {
+    script: './service-worker/',
+    watch: ['./service-worker']
+  }],
+
+  deploy : {
+    production : {
+      user : 'SSH_USERNAME',
+      host : 'SSH_HOSTMACHINE',
+      ref  : 'origin/master',
+      repo : 'GIT_REPOSITORY',
+      path : 'DESTINATION_PATH',
+      'pre-deploy-local': '',
+      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
+      'pre-setup': ''
     }
-  }]
-}
+  }
+};
