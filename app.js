@@ -22,7 +22,7 @@ var options = {
  key: fs.readFileSync(PATH_TO_KEY, 'utf8'),
  cert: fs.readFileSync(PATH_TO_CERT, 'utf8')
  },
- target : 'http://localhost:3000',
+ target : 'http://localhost:6000',
  ws: true,
  xfwd: true,
 };
