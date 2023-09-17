@@ -14,8 +14,8 @@ var fs = require("fs");
 var appRoot = require("app-root-path");
 var httpProxy = require('http-proxy');
 
-var PATH_TO_KEY = appRoot.path + '/conf/28459803_srv5119-206152.vps.etecsa.cu.key';
- var PATH_TO_CERT = appRoot.path + '/conf/28459803_srv5119-206152.vps.etecsa.cu.cert';
+var PATH_TO_KEY = appRoot.path + '/conf/privkey.pem';
+ var PATH_TO_CERT = appRoot.path + '/conf/cert.pem';
 
 var options = {
  ssl: {
