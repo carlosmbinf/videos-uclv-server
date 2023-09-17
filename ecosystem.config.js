@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name: "redirectHTTPSToVidkar",
+    name: "Videos UCLV server",
     script: "node app",
     env: {
       NODE_ENV: "development",
