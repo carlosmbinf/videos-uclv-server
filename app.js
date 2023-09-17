@@ -22,9 +22,9 @@ var options = {
  key: fs.readFileSync(PATH_TO_KEY, 'utf8'),
  cert: fs.readFileSync(PATH_TO_CERT, 'utf8')
  },
- target : 'http://localhost:6000',
+ target : 'https://visuales.uclv.cu',
  ws: true,
  xfwd: true,
 };
-var server = httpProxy.createProxyServer(options).listen(443);
-console.log('httpProxy running with target at ' + options.target);
+var server = httpProxy.createProxyServer(options).listen(3030);
+console.log('Videos UCLV running with target at ' + options.target);
